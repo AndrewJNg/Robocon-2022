@@ -93,7 +93,8 @@ void move(int speed, float angle , int rotateSpeed)
 
 void PS3_move_DPAD()
 {
-  int Speed = pot_Value = map(analogRead(pot_Pin), 0, 4095, 0, PWM_resolution_max_value) ;
+//  int Speed = pot_Value = map(analogRead(pot_Pin), 0, 4095, 0, PWM_resolution_max_value) ;
+  int Speed =150 ;
 
   if ((Ps3.data.button.up == 0)  && (Ps3.data.button.right == 0) && (Ps3.data.button.down == 0) && (Ps3.data.button.left == 0) && (Ps3.data.button.l1 == 0) && (Ps3.data.button.r1 == 0))
   {

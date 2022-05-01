@@ -1,6 +1,6 @@
 //#include "OTA.h"
 #include "PS3.h"
-#include "User_interface.h"
+//#include "User_interface.h"
 #include "Movement.h"
 #include "MPU6050.h"
 
@@ -11,7 +11,7 @@ void setup() {
 //  OTA_setup();
   PS3_setup();
   Movement_setup();
-  User_interface_setup();
+//  User_interface_setup();
   //MPU6050_setup();
   
   while (!Ps3.isConnected())
