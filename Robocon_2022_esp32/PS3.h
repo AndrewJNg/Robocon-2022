@@ -1,5 +1,5 @@
-// Allows control using a PS3 controller
-
+// Allows control using a PS3 controller by using the github library by jvpernis
+//https://github.com/jvpernis/esp32-ps3
 #include <Ps3Controller.h>
 
 int player = 0;
@@ -21,6 +21,12 @@ void notify()
   if ( abs(Ps3.event.analog_changed.stick.rx) + abs(Ps3.event.analog_changed.stick.ry) > 2 ) {
     stick_RX = Ps3.data.analog.stick.rx;
     stick_RY = -Ps3.data.analog.stick.ry;
+  }
+
+  if(1)
+  {
+    
+Stepper_run(0);
   }
 
   /*
@@ -62,7 +68,9 @@ float PS3_LeftAnalogStickSpeed(int LX, int LY)
   float LX_vector = 0;
   float LY_vector = 0;
   if (abs(LX) > 15) LX_vector = map(LX, -128, 127, -10000, 10000) / 100;
+//  else LX_vector = 0;
   if (abs(LY) > 15) LY_vector = map(LY, -127, 128, -10000, 10000) / 100;
+//  else LY_vector = 0;
   float Speed = sqrt(LX_vector * LX_vector + LY_vector * LY_vector);
   if (Speed > 100) Speed = 100;
 
